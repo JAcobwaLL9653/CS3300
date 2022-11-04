@@ -95,26 +95,6 @@
           null
         ]
       },
-      "/root/CS3300/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/root/CS3300/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/root/CS3300/app/helpers/application_helper.rb": {
         "lines": [
           0,
@@ -155,6 +135,6 @@
         }
       }
     },
-    "timestamp": 1667536577
+    "timestamp": 1667596397
   }
 }
