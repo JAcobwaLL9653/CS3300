@@ -1,6 +1,8 @@
 require "rails_helper"
+#require "/root/CS3300/spec/support/controller_macros.rb"
 
 RSpec.describe Project, type: :model do
+
   context "validations tests" do
     it "ensures the title is present" do
       project = Project.new(description: "Content of the description")
@@ -19,24 +21,22 @@ RSpec.describe Project, type: :model do
   end
 
   context "scopes tests" do
+    describe Project, type: :model do
+ 
+      context "scopes tests" do
+        let(:params) { { title: "Title", description: "some description" } }
+          before(:each) do
+          Project.create(params)
+          Project.create(params)
+          Project.create(params)
+      end
 
+      it "should return all projects" do
+        expect(Project.count).to eq(3)
+      end
+
+    end
   end
 end
-
-RSpec.describe Project, type: :model do
-  # ...
-
-  context "scopes tests" do
-    let(:params) { { title: "Title", description: "some description" } }
-    before(:each) do
-      Project.create(params)
-      Project.create(params)
-      Project.create(params)
-    end
-
-    it "should return all projects" do
-      expect(Project.count).to eq(3)
-    end
-
-  end
 end
+

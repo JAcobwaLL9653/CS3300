@@ -16,7 +16,6 @@ gem "puma", "~> 5.0"
 gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
@@ -69,7 +68,6 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
 end
@@ -77,6 +75,8 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 6.0.0'
   gem 'simplecov', require: false
+  gem "capybara"
+  gem 'factory_bot_rails'
 end
 
 gem 'devise'

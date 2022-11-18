@@ -1,4 +1,5 @@
 require "rails_helper"
+#require "/root/CS3300/spec/support/controller_macros.rb"
 
 RSpec.describe "The math below is wrong..." do
   it "should equal 42 but we said 43" do

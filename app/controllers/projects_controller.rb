@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[ new edit update destroy ]
 
   # GET /projects or /projects.json
   def index
@@ -21,6 +22,7 @@ class ProjectsController < ApplicationController
 
   # POST /projects or /projects.json
   def create
+
     @project = Project.new(project_params)
 
     respond_to do |format|
@@ -36,6 +38,7 @@ class ProjectsController < ApplicationController
 
   # PATCH/PUT /projects/1 or /projects/1.json
   def update
+ 
     respond_to do |format|
       if @project.update(project_params)
         format.html { redirect_to project_url(@project), notice: "Project was successfully updated." }
@@ -49,6 +52,7 @@ class ProjectsController < ApplicationController
 
   # DELETE /projects/1 or /projects/1.json
   def destroy
+  
     @project.destroy
 
     respond_to do |format|
@@ -67,4 +71,5 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:title, :description)
     end
+
 end

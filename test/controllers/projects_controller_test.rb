@@ -1,7 +1,14 @@
 require "test_helper"
 
 class ProjectsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers 
+  
   setup do
+    
+    get '/users/sign_in'
+    sign_in user(:user_001)
+    post user_session_url
+
     @project = projects(:one)
   end
 
