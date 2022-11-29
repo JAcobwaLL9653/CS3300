@@ -1,12 +1,30 @@
-<div id="<%= dom_id project %>">
+<div class="container">
+
+<table class="table table-bordered">
+
+  <thead> 
+    <tr>
+      <th>Project Title</th>
+      <th>Project Description</th>
+    </tr>
+  
+  <td>
+  <div id="<%= dom_id project %>">
   <p>
-    <strong>Title:</strong>
     <%= project.title %>
   </p>
-
+  </td>
+  
+  <td>
   <p>
-    <strong>Description:</strong>
+
     <%= project.description %>
   </p>
+</td>
+
+  </tbody>
+  </table>
+
+</div>
 
 </div>

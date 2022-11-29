@@ -1,7 +1,28 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Projects</h1>
+<nav class="navbar navbar-dark navbar-static-top navbar-expand-md">
+  <div class="container">
+    <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
+        </button> <%= link_to "Home", root_path, class: 'navbar-brand' %>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav mr-auto">
+            <li class='nav-item'><%= link_to 'Project Page', @project , class: 'nav-link' %></li>
+            
+            <% if user_signed_in? %>
+            <li class='nav-item'><%= link_to "New project", new_project_path, class: 'nav-link' %></li>
+            <% end %>
 
+                </li>
+            </ul>
+        </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+<h1 class="display-4">Projects</h1>
+<img src="https://www.pinclipart.com/picdir/big/527-5273167_turtle-emoji-clipart-cute-turtle-icon-png-transparent.png" alt="the turtle">"
+</div>
+
+<div class="container">
 <div id="projects">
   <% @projects.each do |project| %>
     <%= render project %>
@@ -9,16 +30,22 @@
       <%= link_to "Show this project", project %>
     </p>
   <% end %>
+  </div>
 </div>
 
+<footer class="page-footer ">
+<nav class="navbarbottom navbar-dark navbar-static-top navbar-expand-md">
 <p class="navbar-text float-right">
 <% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  Logged in as <strong><%= current_user.email %></strong>
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
   <%= button_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-  <%= link_to "New project", new_project_path %>
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 </p>
+</nav>
+</footer>
+
+

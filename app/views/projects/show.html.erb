@@ -2,11 +2,18 @@
 
 <%= render @project %>
 
-<div>
+<nav class="navbar navbar-dark navbar-static-top navbar-expand-md">
+  <div class="container">
+  <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <ul class="nav navbar-nav mr-auto">
   <% if user_signed_in? %>
-  <%= link_to "Edit this project", edit_project_path(@project) %> |
-  <%= link_to "Back to projects", projects_path %>
+  </button><%= link_to "Edit this project", edit_project_path(@project), class: 'navbar-brand', class: 'btn btn-dark'  %>
+  </button><%= link_to "Back to projects", projects_path, class: 'navbar-brand', class: 'btn btn-dark'  %>
   <%end%>
 
-  <%= button_to "Destroy this project", @project, method: :delete %>
+  </button><%= button_to "Destroy this project", @project, method: :delete, class: 'navbar-brand', class: 'btn btn-dark'  %>
+  </li>
+  </ul>
 </div>
+</nav>
