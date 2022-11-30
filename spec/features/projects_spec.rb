@@ -55,6 +55,7 @@ RSpec.feature "Projects", type: :feature do
       user_log_in
       visit project_path(project)
       click_button "Destroy this project"
+      cllick_link "Show this project"
       expect(page).to have_content("Project was successfully destroyed")
       expect(Project.count).to eq(0)
     end
