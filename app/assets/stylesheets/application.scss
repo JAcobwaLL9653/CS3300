@@ -31,7 +31,9 @@
     background: #fcfcfc;
         color: $black;
         text-align: center;
-        
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
         p {
                 color: $black;
                 font-size: 18px;
@@ -51,6 +53,9 @@
 .table {
         border-color: $black;
         width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        
 }
 img{
         width: 100px;

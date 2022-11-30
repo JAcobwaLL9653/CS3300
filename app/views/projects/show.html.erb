@@ -1,6 +1,35 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
 
-<%= render @project %>
+<table class="table table-bordered">
+
+  <thead> 
+    <tr>
+      <th>Project Title</th>
+      <th>Project Description</th>
+    </tr>
+  
+  <td>
+
+  <p>
+    <%= @project.title %>
+  </p>
+  </td>
+  
+  <td>
+  
+  <p>
+
+    <%= @project.description %>
+  </p>
+</td>
+
+  </tbody>
+  </table>
+
+
+</div>
+
+<p style="color: green"><%= notice %></p>
 
 <nav class="navbar navbar-dark navbar-static-top navbar-expand-md">
   <div class="container">
@@ -17,3 +46,4 @@
   </ul>
 </div>
 </nav>
+
